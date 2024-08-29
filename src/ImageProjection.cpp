@@ -477,7 +477,9 @@ public:
             publishCloud(&pubOriginalCloud, laserCloudIn, cloudHeader.stamp, lidarFrame);
         }
 
-        if(pubExtractedCloudRGB.getNumSubscribers()!=0)
+        static uint64 pub_count = 0;
+        pub_count++;
+        if(pubExtractedCloudRGB.getNumSubscribers()!=0 && pub_count%7 == 0)
         {
             pcl::PointCloud<pcl::PointXYZRGB>::Ptr laserCloudFullResColor(new pcl::PointCloud<pcl::PointXYZRGB>());
             laserCloudFullResColor->resize(fullCloud->size());
