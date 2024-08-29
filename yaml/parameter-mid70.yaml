@@ -1,6 +1,6 @@
 ros:
   pointCloudTopic: "/livox/lidar"               # Point cloud data
-  imuTopic: "/imu/data"                     # IMU data
+  imuTopic: "/wit/imu"                     # IMU data
   odomTopic: "odometry"
   lidarFrame: "livox"
   baselinkFrame: "livox"
@@ -14,18 +14,15 @@ calibration:
                       0, 1, 0,
                       0, 0, 1]
   imuExtrinsicTrans: [0.0, 0.0, 0.0]
-  imuExtrinsicRot: [-1, 0, 0,
-                    0, -1, 0,
+  imuExtrinsicRot: [1, 0, 0,
+                    0, 1, 0,
                     0, 0, 1]
-  # imuExtrinsicRot: [1, 0, 0,
-  #                   0, 1, 0,
-  #                   0, 0, 1]
 
-lidar0: # Mid-360
-  N_SCAN: 4
-  Horizon_SCAN: 6000
-  lidarMinRange: 0.4
-  lidarMaxRange: 40.0
+lidar0: # Mid-70
+  N_SCAN: 6
+  Horizon_SCAN: 10000
+  lidarMinRange: 1.0
+  lidarMaxRange: 200.0
 
 imu:
   # IMU Settings
